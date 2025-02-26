@@ -7,5 +7,5 @@
 
 SCRIPT=./1-args-print.sh
 
-${SCRIPT} $*
-${SCRIPT} $@
+${SCRIPT} "$*"
+${SCRIPT} "$@"
