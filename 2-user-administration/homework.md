@@ -42,3 +42,7 @@ echo "Welcome to Linux!" | sudo tee -a /etc/motd > /dev/null
 ssh user@localhost
 # Hello, World!
 ```
+
+## Создание пользователя
+
+### Вручную
