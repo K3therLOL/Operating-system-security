@@ -59,3 +59,4 @@ sudo su - "username"
 ```bash
 sudo deluser "username"
 ```
+## Прикладная задача
