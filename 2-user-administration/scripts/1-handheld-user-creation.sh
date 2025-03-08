@@ -32,14 +32,12 @@ PASSWD_STR=$(grep -w "^${USER}" /etc/passwd |
              head -n1 | 
              sed "s/${USER}/${USER_NAME}/g" | 
              sed "s/${UID}/${USER_UID}/g")
-echo $PASSWD_STR
 
 # Формируем строчку для /etc/group
 GROUP_STR=$(grep -w "^${USER}" /etc/group | 
             head -n1 | 
             sed "s/${USER}/${USER_NAME}/g" | 
             sed "s/${UID}/${USER_UID}/g")
-echo $GROUP_STR
 
 # Записываем в /etc/passwd или /etc/group
 echo "${PASSWD_STR}" | sudo tee -a /etc/passwd >/dev/null
@@ -61,7 +59,6 @@ sudo chmod 750 "/home/${USER_NAME}"
 SHADOW_STR=$(sudo grep -w "^${USER}" /etc/shadow |
              head -n1 | 
              awk -vuser="$USER_NAME" -vhash="$(openssl passwd)" 'BEGIN{FS=":"; OFS=":"} {$1=user; $2=hash; print $0}')
-echo ${SHADOW_STR}
 
 # Записываем в /etc/shadow
 echo "${SHADOW_STR}" | sudo tee -a /etc/shadow >/dev/null 
