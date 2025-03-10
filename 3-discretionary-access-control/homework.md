@@ -108,3 +108,17 @@ echo "message" >> f_append_only
 ```bash
 chattr +i f_append_only
 ```
+# ACL
+`Access Control Lists` — расширенный, более гибкий механизм прав доступа для файловых систем, разработанный как дополнение к стандартным правам доступа `UNIX`. ACL позволяет задавать права доступа к объектам на диске для пользователей и групп. 
+
+> Перейдите в директорию `/tmp`. Создайте папку и сделайте так, чтобы `polina` по-умолчанию могла изменять содержимое всех создаваемых в ней файлов.
+
+```bash
+cd /tmp
+mkdir ivan_dir
+chmod 600 ivan_dir
+setfacl -m "user:polina:-w-" ivan_dir
+sudo -u polina echo "polina" > /tmp/ivan_dir/file
+cat ivan_dir/file
+# polina
+```
