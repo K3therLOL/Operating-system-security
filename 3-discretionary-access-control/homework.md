@@ -122,3 +122,4 @@ sudo -u polina echo "polina" > /tmp/ivan_dir/file
 cat ivan_dir/file
 # polina
 ```
+# Задание
