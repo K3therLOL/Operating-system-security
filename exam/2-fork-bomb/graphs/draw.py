@@ -27,7 +27,7 @@ def draw_line_graph(x, y, x_label, y_label, title):
     plt.title(title)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
-    plt.savefig(f"{title}.png")
+    plt.savefig(f"{title.lower()}.png")
     plt.clf()
 
 draw_line_graph(x, cpus, "t, seconds", "cpu, %", "CPU")
