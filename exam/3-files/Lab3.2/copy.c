@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
 
     char *src = argv[1], *dst = argv[2];
     int f_src = open(src, O_RDONLY | O_CREAT, 0644);
-    int f_dst = open(dst, O_WRONLY | O_CREAT, 0644);
+    int f_dst = open(dst, O_WRONLY | O_CREAT | O_TRUNC, 0644);
     if (f_dst == -1 || f_src == -1) {
         perror("open:");
         return EXIT_FAILURE;
