@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y git gcc vim strace man-db openssh-client
+RUN apt-get update && apt-get install -y git gcc vim strace man-db openssh-client tmux
 
 RUN git config --global user.email "g3roylol@gmail.com"
 RUN git config --global user.name "kether"
